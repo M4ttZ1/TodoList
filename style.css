@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #242424;
+  font-family: 'roboto', 'sans-serif';
+}
+  
+body {
+  background-color: #faf9fa;
+  transition: all 300ms ease;
+}
+
+#todo {
+  margin: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 2px solid hsla(0,0%,50%,.1);
+}
+
+.todo__input {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 24px;
+}
+
+li {
+  background-color: white;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  margin-bottom: 16px;
+  position: relative;
+  border-bottom: solid 1px;
+}
+
+h1 {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.todo__add {
+  border: 1px solid #242424;
+  height: 32px;
+  background-color: white;
+  padding: 0 16px;
+}
+
+.todo__add:hover {
+  background-color: #c9baba38;
+}
+
+.todo__delete {
+  font-weight: bold;
+  background-color: unset;
+  position: absolute;
+  right: 0px;
+  height: 24px;
+  width: 24px;
+  transition: all 100ms ease;
+}
+.todo__delete:hover{
+  color: red;
+  transition: all 100ms ease;
+}
+
+.todo__complete{
+  font-weight: bold;
+  background-color: unset;
+  position: absolute;
+  right: 60px;
+  height: 20px;
+  width: 20px;
+  border: solid 2px;
+  margin-bottom: 2px;
+}
+
+input {
+  height: 32px;
+  width: 100%;
+  margin-right: 8px;
+  border: 1px solid #242424;
+  padding-left: 8px;
+  outline: none;
+}
+
+.row {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+
+/*DARKMODE*/
+
+.dark-mode__picture{
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 100ms;
+  position: absolute;
+}
+
+.dark-mode__picture:hover{
+  width: 26px;
+  height: 26px;
+  transition: all 100ms;
+}
+
+.dark-theme{
+  background-color: #242424;
+  transition: all 300ms ease;
+  color:white
+}
+  
+.dark-theme .title, 
+.dark-theme .todo__add,
+.dark-theme .todo__complete,
+.dark-theme input,
+.dark-theme .todo__delete,
+.dark-theme li{
+  color: #faf9fa;
+}
+
+.dark-theme .todo__wrapper,
+.dark-theme #todo{
+  background-color: rgb(49, 43, 43);
+}
+
+.dark-theme .text__field,
+.dark-theme .todo__add{
+  background-color: #242424;
+}
+
+.dark-theme .dark-mode__picture{
+  filter: invert(1);
+}
+
+.dark-theme .todo__delete:hover{
+  color: red;
+}
+
+.dark-theme .todo__add:hover{
+  background-color: rgb(31, 29, 27);
+}
