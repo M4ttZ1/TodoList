@@ -14,6 +14,7 @@ function onInputChange(event) {
 function addTodoWithDialog() {
   dialog = window.prompt();
   addTodo();
+  verifyCheckMark()
 }
 
 function addTodo() {
@@ -50,9 +51,8 @@ function completeTodo(completeId) {
 
 function editTodo(editId) {
   todoList[editId].task = window.prompt();
-  todoList[editId].completed = !todoList[editId].completed
   renderTodos();
-  completeTodo(editId)
+  verifyCheckMark()
 }
 
 function renderTodos() {
@@ -78,4 +78,11 @@ function toggleContrast() {
     return;
   }
   document.body.classList.remove("dark-theme");
+}
+
+function verifyCheckMark(){
+  todoList.forEach((elem) => {
+    todoList[elem.id].completed = !todoList[elem.id].completed
+    completeTodo(elem.id)
+  })
 }
