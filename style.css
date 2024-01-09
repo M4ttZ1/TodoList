@@ -64,6 +64,18 @@ button {
   background-color: #c9baba38;
 }
 
+.todo__dialog{
+  border: 1px solid #242424;
+  height: 32px;
+  background-color: white;
+  margin-left: 5px;
+  padding: 0 8px;
+  font-size: small;
+}
+.todo__dialog:hover{
+  background-color: #c9baba38;
+}
+
 .todo__delete {
   font-weight: bold;
   background-color: unset;
@@ -87,6 +99,19 @@ button {
   width: 20px;
   border: solid 2px;
   margin-bottom: 2px;
+}
+
+.todo__edit{
+  background-color: unset;
+  font-weight: bold;
+  position: absolute;
+  right: 130px;
+  color: #0cb0e2;
+  bottom: 0px;
+}
+
+.todo__edit:hover{
+  color: #168ab1;
 }
 
 input {
@@ -132,7 +157,8 @@ input {
 .dark-theme .todo__complete,
 .dark-theme input,
 .dark-theme .todo__delete,
-.dark-theme li{
+.dark-theme li,
+.dark-theme .todo__dialog{
   color: #faf9fa;
 }
 
@@ -142,7 +168,8 @@ input {
 }
 
 .dark-theme .text__field,
-.dark-theme .todo__add{
+.dark-theme .todo__add,
+.dark-theme .todo__dialog{
   background-color: #242424;
 }
 
@@ -154,6 +181,7 @@ input {
   color: red;
 }
 
-.dark-theme .todo__add:hover{
+.dark-theme .todo__add:hover,
+.dark-theme .todo__dialog:hover{
   background-color: rgb(31, 29, 27);
 }
