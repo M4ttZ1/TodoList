@@ -13,8 +13,11 @@ function onInputChange(event) {
 
 function addTodoWithDialog() {
   dialog = window.prompt();
+  if (!dialog) {
+    return;
+  }
   addTodo();
-  verifyCheckMark()
+  verifyCheckMark();
 }
 
 function addTodo() {
@@ -29,13 +32,16 @@ function addTodo() {
   renderTodos();
   input.value = "";
   todoInputValue = "";
-  dialog = null
+  dialog = null;
 }
 
 function deleteTodo(removeId) {
   todoList = todoList.filter((todo) => todo.id !== removeId);
+  todoList.forEach((elem, i) => (elem.id = i));
   counter--;
+
   renderTodos();
+  verifyCheckMark();
 }
 
 function completeTodo(completeId) {
@@ -50,9 +56,15 @@ function completeTodo(completeId) {
 }
 
 function editTodo(editId) {
+  let temp = todoList[editId].task;
   todoList[editId].task = window.prompt();
+
+  if (!todoList[editId].task) {
+    todoList[editId].task = temp;
+  }
+
   renderTodos();
-  verifyCheckMark()
+  verifyCheckMark();
 }
 
 function renderTodos() {
@@ -73,6 +85,7 @@ function renderTodos() {
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
+
   if (contrastToggle) {
     document.body.classList += " dark-theme";
     return;
@@ -80,9 +93,9 @@ function toggleContrast() {
   document.body.classList.remove("dark-theme");
 }
 
-function verifyCheckMark(){
+function verifyCheckMark() {
   todoList.forEach((elem) => {
-    todoList[elem.id].completed = !todoList[elem.id].completed
-    completeTodo(elem.id)
-  })
+    todoList[elem.id].completed = !todoList[elem.id].completed;
+    completeTodo(elem.id);
+  });
 }
