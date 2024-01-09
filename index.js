@@ -12,7 +12,7 @@ function onInputChange(event) {
 }
 
 function addTodoWithDialog() {
-  dialog = window.prompt();
+  dialog = window.prompt("please enter your task");
   if (!dialog) {
     return;
   }
@@ -57,7 +57,7 @@ function completeTodo(completeId) {
 
 function editTodo(editId) {
   let temp = todoList[editId].task;
-  todoList[editId].task = window.prompt();
+  todoList[editId].task = window.prompt("please edit the selected value", temp);
 
   if (!todoList[editId].task) {
     todoList[editId].task = temp;
